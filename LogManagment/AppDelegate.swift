@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        InitializeLogging(withLogLevel: .off)
+        
+        LogDebug(logText: "Debug Log Message")
+        LogInfo(logText: "Info Log Message")
+        LogError(logText: "Error Log Message")
+        LogVerbose(logText: "Verbose Log Message")
+        LogWarn(logText: "Warn Log Message")
+
+        LogManager.registerLogLevel(forClassNames: [String(describing: SubClassA.self): .debug, String(describing: SubClassB.self): .info])
+        LogManager.showAllLogLevels()
+        
+        SubClassA().sampleFunction()
+        SubClassB().sampleFunction()
+        
         return true
     }
 
@@ -40,7 +54,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

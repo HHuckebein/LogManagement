@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28FBBFF40E0FBDE9A18F371D /* Pods_LogManagment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8895921847DC77481ADA8B5D /* Pods_LogManagment.framework */; };
 		731D2FC51D69D57900F6394A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D2FC41D69D57900F6394A /* AppDelegate.swift */; };
 		731D2FC71D69D57900F6394A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D2FC61D69D57900F6394A /* ViewController.swift */; };
 		731D2FCA1D69D57900F6394A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731D2FC81D69D57900F6394A /* Main.storyboard */; };
 		731D2FCC1D69D57900F6394A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731D2FCB1D69D57900F6394A /* Assets.xcassets */; };
 		731D2FCF1D69D57900F6394A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731D2FCD1D69D57900F6394A /* LaunchScreen.storyboard */; };
+		731D2FD81D69D6D900F6394A /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D2FD71D69D6D900F6394A /* LogManager.swift */; };
+		7373DDE21D84663900F5DAB3 /* BaseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7373DDE11D84663900F5DAB3 /* BaseClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		731D2FCB1D69D57900F6394A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		731D2FCE1D69D57900F6394A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		731D2FD01D69D57900F6394A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		731D2FD71D69D6D900F6394A /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		7373DDE11D84663900F5DAB3 /* BaseClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClass.swift; sourceTree = "<group>"; };
+		8895921847DC77481ADA8B5D /* Pods_LogManagment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogManagment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E20AA405CF8F055E8392483 /* Pods-LogManagment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogManagment.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment.release.xcconfig"; sourceTree = "<group>"; };
+		C21E98013233D145B5CB555D /* Pods-LogManagment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogManagment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FBBFF40E0FBDE9A18F371D /* Pods_LogManagment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				731D2FC31D69D57900F6394A /* LogManagment */,
 				731D2FC21D69D57900F6394A /* Products */,
+				CD07EB520DA0BD034895951C /* Pods */,
+				CE35A9117B94EF8618BAD5C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,41 @@
 		731D2FC31D69D57900F6394A /* LogManagment */ = {
 			isa = PBXGroup;
 			children = (
+				731D2FD61D69D6B200F6394A /* Sources */,
 				731D2FC41D69D57900F6394A /* AppDelegate.swift */,
 				731D2FC61D69D57900F6394A /* ViewController.swift */,
 				731D2FC81D69D57900F6394A /* Main.storyboard */,
 				731D2FCB1D69D57900F6394A /* Assets.xcassets */,
 				731D2FCD1D69D57900F6394A /* LaunchScreen.storyboard */,
 				731D2FD01D69D57900F6394A /* Info.plist */,
+				7373DDE11D84663900F5DAB3 /* BaseClass.swift */,
 			);
 			path = LogManagment;
+			sourceTree = "<group>";
+		};
+		731D2FD61D69D6B200F6394A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				731D2FD71D69D6D900F6394A /* LogManager.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CD07EB520DA0BD034895951C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C21E98013233D145B5CB555D /* Pods-LogManagment.debug.xcconfig */,
+				8E20AA405CF8F055E8392483 /* Pods-LogManagment.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE35A9117B94EF8618BAD5C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8895921847DC77481ADA8B5D /* Pods_LogManagment.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 731D2FD31D69D57900F6394A /* Build configuration list for PBXNativeTarget "LogManagment" */;
 			buildPhases = (
+				18BC2E9AFEC80FC17F9B053E /* 📦 Check Pods Manifest.lock */,
 				731D2FBD1D69D57900F6394A /* Sources */,
 				731D2FBE1D69D57900F6394A /* Frameworks */,
 				731D2FBF1D69D57900F6394A /* Resources */,
+				4B4E9ED8A47BBD969F191668 /* 📦 Embed Pods Frameworks */,
+				FFE9062877745F2D5023695E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +137,7 @@
 				TargetAttributes = {
 					731D2FC01D69D57900F6394A = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4VQVU766P5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,13 +173,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18BC2E9AFEC80FC17F9B053E /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4B4E9ED8A47BBD969F191668 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFE9062877745F2D5023695E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		731D2FBD1D69D57900F6394A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				731D2FD81D69D6D900F6394A /* LogManager.swift in Sources */,
 				731D2FC71D69D57900F6394A /* ViewController.swift in Sources */,
 				731D2FC51D69D57900F6394A /* AppDelegate.swift in Sources */,
+				7373DDE21D84663900F5DAB3 /* BaseClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +348,10 @@
 		};
 		731D2FD41D69D57900F6394A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C21E98013233D145B5CB555D /* Pods-LogManagment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4VQVU766P5;
 				INFOPLIST_FILE = LogManagment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.berndrabe.LogManagment;
@@ -268,8 +362,10 @@
 		};
 		731D2FD51D69D57900F6394A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E20AA405CF8F055E8392483 /* Pods-LogManagment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4VQVU766P5;
 				INFOPLIST_FILE = LogManagment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.berndrabe.LogManagment;
@@ -297,6 +393,7 @@
 				731D2FD51D69D57900F6394A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
