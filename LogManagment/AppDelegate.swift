@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LogVerbose(logText: "Verbose Log Message")
         LogWarn(logText: "Warn Log Message")
 
-        LogManager.registerLogLevel(forClassNames: [String(describing: SubClassA.self): .debug, String(describing: SubClassB.self): .info])
+        LogManager.registerLogLevel(forClassNames: [String(describing: SubClassA.self): .debug,
+                                                    String(describing: SubClassB.self): .info])
         LogManager.showAllLogLevels()
         
         SubClassA().sampleFunction()

@@ -78,6 +78,12 @@ public protocol LogLevel {
     var logLevel: DDLogLevel { get }
 }
 
+extension ViewController: LogLevel {
+    public var logLevel: DDLogLevel {
+        return LogManager.logLevel(forClassName: String(describing: type(of: self)))
+    }
+}
+
 /** Provides an API to use dynamic loglevel changes.
  All loglevels are stored in a volatile domain using UserDefaults.
  A loglevel for a class gets automatically registered with the defaultDebugLevel if it
@@ -87,13 +93,6 @@ public protocol LogLevel {
  For security reasons all Log??? methods do nothing in non DEBUG mode.
  To turn off logging for all classes except your own use `disableLoggingExcept(forClass:)`.
  Sample implementation for class XYZ
-    ```
-    extension XYZ: LogLevel {
-        public var logLevel: DDLogLevel {
-            return LogManager.logLevel(forClassName: String(self.dynamicType))
-        }
-    }
-    ```
  */
 public struct LogManager {
 /** Sets the logLevel for a given class with name.
