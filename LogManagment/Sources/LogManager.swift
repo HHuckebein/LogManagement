@@ -101,7 +101,7 @@ public struct LogManager {
  - Parameter level: The logLevel given as DDLogLevel.
 */
     public static func setLogLevel(forClassName className: String, level: DDLogLevel) {
-        if var logLevelDefaults = allLogLevelDefaults, className.characters.count != 0 {
+        if var logLevelDefaults = allLogLevelDefaults, className.count != 0 {
             logLevelDefaults[className] = level.rawValue
             UserDefaults().setVolatileDomain(logLevelDefaults, forName: LogManagerConstants.DefaultsName)
         }
