@@ -68,7 +68,7 @@ enum SomeEnum: LogLevel {
 ```
 
 ### License
-- LogManager is available under the MIT license. See the [LICENSE file](LICENSE.txt).
+- See the  [LICENSE](LICENSE.txt) file for license rights and limitations (MIT).
 
 
 
