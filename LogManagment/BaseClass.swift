@@ -9,15 +9,9 @@
 import Foundation
 import CocoaLumberjack
 
-extension BaseClass: LogLevel {
-    public var logLevel: DDLogLevel {
-        return LogManager.logLevel(forClassName: String(describing: type(of: self)))
-    }
-}
+// MARK: - Class Type
 
-class BaseClass {
-    
-}
+class BaseClass: LogLevel {}
 
 class SubClassA: BaseClass {
     func sampleFunction() {
@@ -30,3 +24,29 @@ class SubClassB: BaseClass {
         LogInfo(logText: "\(self)", level: logLevel)
     }
 }
+
+class SubClassC: BaseClass {
+    func sampleFunction() {
+        LogInfo(logText: "\(self)", level: logLevel)
+    }
+}
+
+// MARK: - Struct's
+
+struct SomeStruct: LogLevel {
+    func sampleFunction() {
+        LogVerbose(logText: "\(self)", level: logLevel)
+    }
+}
+
+// MARK: - Enum's
+
+enum SomeEnum: LogLevel {
+    case one
+    case two
+    
+    func status() {
+        LogWarn(logText: "\(self)", level: logLevel)
+    }
+}
+

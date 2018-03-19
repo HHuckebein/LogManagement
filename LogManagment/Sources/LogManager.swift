@@ -10,7 +10,7 @@ import Foundation
 import CocoaLumberjack
 
 public func InitializeLogging(withLogLevel logLevel: DDLogLevel = .warning) {
-    DDLog.add(DDTTYLogger.sharedInstance())
+    DDLog.add(DDTTYLogger.sharedInstance)
     defaultDebugLevel = logLevel
 }
 
@@ -33,23 +33,23 @@ public func AddFileLogging(forLogLevel logLevel: DDLogLevel) {
 // Turn off logging if not in DEBUG mode (security measure)
 #if DEBUG
     public func LogDebug(logText: @autoclosure () -> String, level: DDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: AnyObject? = nil, asynchronous async: Bool = true) {
-        _DDLogMessage(message: logText, level: level, flag: .debug, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance())
+        _DDLogMessage(logText(), level: level, flag: .debug, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance)
     }
     
     public func LogInfo(logText: @autoclosure () -> String, level: DDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: AnyObject? = nil, asynchronous async: Bool = true) {
-        _DDLogMessage(message: logText, level: level, flag: .info, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance())
+        _DDLogMessage(logText(), level: level, flag: .info, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance)
     }
     
     public func LogWarn(logText: @autoclosure () -> String, level: DDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: AnyObject? = nil, asynchronous async: Bool = true) {
-        _DDLogMessage(message: logText, level: level, flag: .warning, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance())
+        _DDLogMessage(logText(), level: level, flag: .warning, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance)
     }
     
     public func LogVerbose(logText: @autoclosure () -> String, level: DDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: AnyObject? = nil, asynchronous async: Bool = true) {
-        _DDLogMessage(message: logText, level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance())
+        _DDLogMessage(logText(), level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance)
     }
     
     public func LogError(logText: @autoclosure () -> String, level: DDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: AnyObject? = nil, asynchronous async: Bool = true) {
-        _DDLogMessage(message: logText, level: level, flag: .error, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance())
+        _DDLogMessage(logText(), level: level, flag: .error, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: DDLog.sharedInstance)
     }
 #else
     public func LogDebug(logText: @autoclosure () -> String, level: DDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: AnyObject? = nil, asynchronous async: Bool = true) {
@@ -78,7 +78,7 @@ public protocol LogLevel {
     var logLevel: DDLogLevel { get }
 }
 
-extension ViewController: LogLevel {
+extension LogLevel {
     public var logLevel: DDLogLevel {
         return LogManager.logLevel(forClassName: String(describing: type(of: self)))
     }

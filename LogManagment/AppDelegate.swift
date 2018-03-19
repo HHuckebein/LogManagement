@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        InitializeLogging(withLogLevel: .off)
+        InitializeLogging(withLogLevel: .warning)
         
         LogDebug(logText: "Debug Log Message")
         LogInfo(logText: "Info Log Message")
@@ -25,11 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LogWarn(logText: "Warn Log Message")
 
         LogManager.registerLogLevel(forClassNames: [String(describing: SubClassA.self): .debug,
-                                                    String(describing: SubClassB.self): .info])
+                                                    String(describing: SubClassB.self): .info,
+                                                    String(describing: SomeStruct.self): .verbose])
         LogManager.showAllLogLevels()
         
         SubClassA().sampleFunction()
         SubClassB().sampleFunction()
+        SubClassC().sampleFunction()
+        SomeStruct().sampleFunction()
+        SomeEnum.one.status()
         
         return true
     }

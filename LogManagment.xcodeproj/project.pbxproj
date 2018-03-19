@@ -27,6 +27,7 @@
 		731D2FD01D69D57900F6394A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		731D2FD71D69D6D900F6394A /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		7373DDE11D84663900F5DAB3 /* BaseClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClass.swift; sourceTree = "<group>"; };
+		73FF6B87205FC0650053AF97 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8895921847DC77481ADA8B5D /* Pods_LogManagment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogManagment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E20AA405CF8F055E8392483 /* Pods-LogManagment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogManagment.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment.release.xcconfig"; sourceTree = "<group>"; };
 		C21E98013233D145B5CB555D /* Pods-LogManagment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogManagment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		731D2FB81D69D57900F6394A = {
 			isa = PBXGroup;
 			children = (
+				73FF6B87205FC0650053AF97 /* README.md */,
 				731D2FC31D69D57900F6394A /* LogManagment */,
 				731D2FC21D69D57900F6394A /* Products */,
 				CD07EB520DA0BD034895951C /* Pods */,
