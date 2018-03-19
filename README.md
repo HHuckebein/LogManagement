@@ -7,7 +7,7 @@ Provides
 * maintains a global log level settings dictionary
 * provides methods to set a different log level certain types
 
-### Set global log leve
+### Set a global log level
 
 ```Swift
     InitializeLogging(withLogLevel: .warning)
