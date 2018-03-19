@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        InitializeLogging(withLogLevel: .warning)
+        InitializeLogging(withLogLevel: .off)
         
         LogDebug(logText: "Debug Log Message")
         LogInfo(logText: "Info Log Message")

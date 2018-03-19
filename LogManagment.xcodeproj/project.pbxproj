@@ -15,6 +15,7 @@
 		731D2FCF1D69D57900F6394A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731D2FCD1D69D57900F6394A /* LaunchScreen.storyboard */; };
 		731D2FD81D69D6D900F6394A /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D2FD71D69D6D900F6394A /* LogManager.swift */; };
 		7373DDE21D84663900F5DAB3 /* BaseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7373DDE11D84663900F5DAB3 /* BaseClass.swift */; };
+		73FF6B8A20600D980053AF97 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 73FF6B8920600D980053AF97 /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		731D2FD71D69D6D900F6394A /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		7373DDE11D84663900F5DAB3 /* BaseClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClass.swift; sourceTree = "<group>"; };
 		73FF6B87205FC0650053AF97 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		73FF6B8920600D980053AF97 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		8895921847DC77481ADA8B5D /* Pods_LogManagment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogManagment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E20AA405CF8F055E8392483 /* Pods-LogManagment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogManagment.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment.release.xcconfig"; sourceTree = "<group>"; };
 		C21E98013233D145B5CB555D /* Pods-LogManagment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogManagment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogManagment/Pods-LogManagment.debug.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		731D2FB81D69D57900F6394A = {
 			isa = PBXGroup;
 			children = (
+				73FF6B8920600D980053AF97 /* LICENSE.txt */,
 				73FF6B87205FC0650053AF97 /* README.md */,
 				731D2FC31D69D57900F6394A /* LogManagment */,
 				731D2FC21D69D57900F6394A /* Products */,
@@ -69,7 +72,6 @@
 			children = (
 				731D2FD61D69D6B200F6394A /* Sources */,
 				731D2FC41D69D57900F6394A /* AppDelegate.swift */,
-				731D2FC61D69D57900F6394A /* ViewController.swift */,
 				731D2FC81D69D57900F6394A /* Main.storyboard */,
 				731D2FCB1D69D57900F6394A /* Assets.xcassets */,
 				731D2FCD1D69D57900F6394A /* LaunchScreen.storyboard */,
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				731D2FD71D69D6D900F6394A /* LogManager.swift */,
+				731D2FC61D69D57900F6394A /* ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 					731D2FC01D69D57900F6394A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4VQVU766P5;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -170,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73FF6B8A20600D980053AF97 /* LICENSE.txt in Resources */,
 				731D2FCF1D69D57900F6394A /* LaunchScreen.storyboard in Resources */,
 				731D2FCC1D69D57900F6394A /* Assets.xcassets in Resources */,
 				731D2FCA1D69D57900F6394A /* Main.storyboard in Resources */,
@@ -426,7 +431,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.berndrabe.LogManagment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -440,7 +446,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.berndrabe.LogManagment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

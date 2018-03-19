@@ -9,21 +9,21 @@
 import Foundation
 import CocoaLumberjack
 
-public func InitializeLogging(withLogLevel logLevel: DDLogLevel = .warning) {
+public func InitializeLogging(withLogLevel level: DDLogLevel = .warning) {
     DDLog.add(DDTTYLogger.sharedInstance)
-    defaultDebugLevel = logLevel
+    defaultDebugLevel = level
 }
 
-public func SetLoggingLevel(logLevel: DDLogLevel) {
-    defaultDebugLevel = logLevel
+public func SetLoggingLevel(_ level: DDLogLevel) {
+    defaultDebugLevel = level
 }
 
-public func AddFileLogging(forLogLevel logLevel: DDLogLevel) {
+public func AddFileLogging(for level: DDLogLevel) {
     if let logFilePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
         let logFileManager = DDLogFileManagerDefault(logsDirectory: logFilePath)
         if let fileLogger = DDFileLogger(logFileManager: logFileManager) {
             fileLogger.rollingFrequency = 60 * 60 * 24
-            DDLog.add(fileLogger, with: logLevel)
+            DDLog.add(fileLogger, with: level)
         } else {
             print("File logging couldn't be enabled")
         }
@@ -71,7 +71,7 @@ public func AddFileLogging(forLogLevel logLevel: DDLogLevel) {
 // MARK: - LogManager
 
 public struct LogManagerConstants {
-    static let DefaultsName = "LogLevels"
+    static let defaultsName = "LogLevels"
 }
 
 public protocol LogLevel {
@@ -87,12 +87,11 @@ extension LogLevel {
 /** Provides an API to use dynamic loglevel changes.
  All loglevels are stored in a volatile domain using UserDefaults.
  A loglevel for a class gets automatically registered with the defaultDebugLevel if it
- uses one of the Log??? methods with `level: self.logLevel`parameter.
+ uses one of the Log??? methods with `level: logLevel`parameter.
  Alternativ one can register a class with a specific loglevel by using the
  `registerLogLevel(forClassNames:)` method.
  For security reasons all Log??? methods do nothing in non DEBUG mode.
  To turn off logging for all classes except your own use `disableLoggingExcept(forClass:)`.
- Sample implementation for class XYZ
  */
 public struct LogManager {
 /** Sets the logLevel for a given class with name.
@@ -103,7 +102,7 @@ public struct LogManager {
     public static func setLogLevel(forClassName className: String, level: DDLogLevel) {
         if var logLevelDefaults = allLogLevelDefaults, className.count != 0 {
             logLevelDefaults[className] = level.rawValue
-            UserDefaults().setVolatileDomain(logLevelDefaults, forName: LogManagerConstants.DefaultsName)
+            UserDefaults().setVolatileDomain(logLevelDefaults, forName: LogManagerConstants.defaultsName)
         }
     }
     
@@ -120,7 +119,8 @@ public struct LogManager {
     
 /** Returns the logLevel for the given class name. If the class has not yet been registered
  it is set to the `defaultDebugLevel`.
-          - Parameter className: The name of the class for which the logLevel should be set.
+
+ - Parameter className: The name of the class for which the logLevel should be set.
  */
     public static func logLevel(forClassName className: String) -> DDLogLevel {
         if let logLevelDefaults = allLogLevelDefaults, let rawValue = logLevelDefaults[className], let logLevel = DDLogLevel(rawValue: rawValue) {
@@ -140,40 +140,40 @@ public struct LogManager {
             for logInfo in logLevelDefaults where logInfo.0 != className {
                 logLevelDefaults[logInfo.0] = DDLogLevel.off.rawValue
             }
-            UserDefaults().setVolatileDomain(logLevelDefaults, forName: LogManagerConstants.DefaultsName)
+            UserDefaults().setVolatileDomain(logLevelDefaults, forName: LogManagerConstants.defaultsName)
         }
     }
     
 /** Register logLevels for class names upfront.
  
-     - Parameter forClassNames: A dictionary containing the logLevels for class names.
+ - Parameter forClassNames: A dictionary containing the logLevels for class names.
 */
     public static func registerLogLevel(forClassNames classNames: [String: DDLogLevel]) {
         if var logLevelDefaults = allLogLevelDefaults {
             for (key, value) in classNames {
                 logLevelDefaults[key] = value.rawValue
             }
-            UserDefaults().setVolatileDomain(logLevelDefaults, forName: LogManagerConstants.DefaultsName)
+            UserDefaults().setVolatileDomain(logLevelDefaults, forName: LogManagerConstants.defaultsName)
         }
     }
 }
 
 private extension LogManager {
     static var allLogLevelDefaults: [String:UInt]? {
-        return UserDefaults().volatileDomain(forName: LogManagerConstants.DefaultsName) as? [String:UInt]
+        return UserDefaults().volatileDomain(forName: LogManagerConstants.defaultsName) as? [String: UInt]
     }
 }
 
 extension DDLogLevel: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .debug: return   "Debug"
-        case .error: return   "Error"
-        case .info: return    "Info"
-        case .verbose: return "Verbose"
-        case .warning: return "Warning"
-        case .all: return     "All"
         case .off: return     "Off"
+        case .error: return   "Error"
+        case .warning: return "Warning"
+        case .info: return    "Info"
+        case .debug: return   "Debug"
+        case .verbose: return "Verbose"
+        case .all: return     "All"
         }
     }
 }
